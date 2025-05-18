@@ -181,12 +181,14 @@ const handleSubmit = (e) => {
               description="A decentralized system for real-time monitoring and detection of network intrusions."
               tags={["Python", "Network management"]}
               icon={<Monitor size={32} className="text-cyan-400" />}
+              link="https://github.com/VABVAT/IDS"
             />
             <ProjectCard 
               title="Cracked Code"
               description="Undetectable AI-Powered Interview Assistant"
               tags={["React", "electron.js", "mongoDB", "TypeScript"]}
               icon={<Layers size={32} className="text-indigo-400" />}
+              link="https://drive.google.com/file/d/1Sjm0zL_mu8yuT-A7DKEr5mkiYCxCBwYm/view?usp=sharing"
             />
           </div>
         </section>
@@ -450,7 +452,7 @@ function TypewriterEffect({ phrases }) {
 }
 
 // Project Card Component
-function ProjectCard({ title, description, tags, icon }) {
+function ProjectCard({ title, description, tags, icon, link }) {
   const [hover, setHover] = useState(false);
   
   return (
@@ -474,13 +476,13 @@ function ProjectCard({ title, description, tags, icon }) {
         ))}
       </div>
       
-      <button className={`text-sm text-cyan-400 flex items-center transition-all duration-300 ${hover ? 'translate-x-2' : ''}`}>
+      <a href={link} className={`text-sm text-cyan-400 flex items-center transition-all duration-300 ${hover ? 'translate-x-2' : ''}`}>
         <span className="mr-2">View Project</span>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3.33334 8H12.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           <path d="M8 3.33334L12.6667 8.00001L8 12.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
-      </button>
+      </a>
     </div>
   );
 }
